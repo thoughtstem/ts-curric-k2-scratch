@@ -311,8 +311,6 @@
    
    end-of-class-instructions-short))
 
-(our-house)
-
 
 
 (define (quest1)
