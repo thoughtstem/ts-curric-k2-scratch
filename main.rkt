@@ -193,7 +193,7 @@
    (titled-image-panel "5. PLAY!"
                        (local-bitmap "click-run.png"))
 
-   end-of-class-instructions))
+   end-of-class-instructions-short))
 
 
 
@@ -376,11 +376,10 @@
    (our-house)))
 
 (define (quests)
-  (list (quest1)
-        (quest2)
-        (quest3)
-        (quest4)
-        (quest5)
-        (quest6)
-        (quest7)
-        ))
+  (list quest1
+        quest2
+        quest3
+        quest4
+        quest5
+        quest6
+        quest7))
