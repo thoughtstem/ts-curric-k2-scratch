@@ -48,7 +48,7 @@
                                     (square 10 'solid 'transparent)
                                     (text (~a " " sub-title) 15 'black)
                                     (square 10 'solid 'transparent)
-                                    (rectangle 1000 200 'outline 'black)))))
+                                    (rectangle 1000 427 'outline 'black)))))
 
 
 
@@ -311,35 +311,6 @@
    
    end-of-class-instructions-short))
 
-; Quest 9 Handout
-(define (all-friends)
-  (auto-layout #:page-height 1050
-   (titled-image-panel #:fill 'white
-                       "Project 9 - Super Effects"
-                       (rectangle 900 1 'solid 'white))
-   (titled-image-panel #:fill 'lightgray
-                       "INSTRUCTOR: Scan students in, open Scratch and File > Upload."
-                       (rectangle 900 1 'solid 'white))
-   
-   (titled-image-panel "1. Follow Effect"
-                       (scale 0.8 (local-bitmap "follow-effect.png")))
-
-   (titled-image-panel "2. Spin Effect"
-                       (scale 0.8 (local-bitmap "spin-effect.png")))
-
-   (titled-image-panel "3. Move Random Effect"
-                       (scale 0.8 (local-bitmap "move-random-effect.png")))
-   
-   (titled-image-panel "4. Grow Effect"
-                       (scale 0.8 (local-bitmap "grow-effect.png")))
-
-   (titled-image-panel "5. Shrink Effect"
-                       (scale 0.8 (local-bitmap "shrink-effect.png")))
-
-   (titled-image-panel "6. Rainbow Effect"
-                       (scale 0.75 (local-bitmap "rainbow-effect.png")))
-   
-   end-of-class-instructions-short))
 
 
 (define (quest1)
@@ -354,7 +325,7 @@
 
 (define (quest2)
   (list
-   ;(worksheet "First Background" "Where is this?")
+   (worksheet "First Background" "Where is this?")
    (draw-background)))
 
 
@@ -404,10 +375,6 @@
                      "Second Character's Home" "Where is it?")
    (our-house)))
 
-(define (quest9)
-  (list
-   (all-friends)))
-
 (define (quests)
   (list quest1
         quest2
@@ -415,6 +382,4 @@
         quest4
         quest5
         quest6
-        quest7
-        quest8
-        quest9))
+        quest7))
