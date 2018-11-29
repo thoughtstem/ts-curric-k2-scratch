@@ -18,55 +18,55 @@
                           title2 sub-title2)
   (auto-layout #:page-height 510
    
-   (titled-image-panel title1
-                       (above/align "left"
-                                    (square 10 'solid 'transparent)
-                                    (text (~a " " sub-title1) 15 'black)
-                                    (square 10 'solid 'transparent)
-                                    (rectangle 500 400 'outline 'black)
-                                    (square 10 'solid 'transparent)
-                                    (text " Message:" 15 'black)
-                                    (square 10 'solid 'transparent))
-                       500)
+               (titled-image-panel title1
+                                   (above/align "left"
+                                                (square 10 'solid 'transparent)
+                                                (text (~a " " sub-title1) 15 'black)
+                                                (square 10 'solid 'transparent)
+                                                (rectangle 500 400 'outline 'black)
+                                                (square 10 'solid 'transparent)
+                                                (text " Message:" 15 'black)
+                                                (square 10 'solid 'transparent))
+                                   500)
 
-   (titled-image-panel title2
-                       (above/align "left"
-                                    (square 10 'solid 'transparent)
-                                    (text (~a " " sub-title2) 15 'black)
-                                    (square 10 'solid 'transparent)
-                                    (rectangle 500 400 'outline 'black)
-                                    (square 10 'solid 'transparent)
-                                    (text " Message:" 15 'black)
-                                    (square 10 'solid 'transparent))
-                       500)))
+               (titled-image-panel title2
+                                   (above/align "left"
+                                                (square 10 'solid 'transparent)
+                                                (text (~a " " sub-title2) 15 'black)
+                                                (square 10 'solid 'transparent)
+                                                (rectangle 500 400 'outline 'black)
+                                                (square 10 'solid 'transparent)
+                                                (text " Message:" 15 'black)
+                                                (square 10 'solid 'transparent))
+                                   500)))
 
 (define (worksheet title sub-title)
   (auto-layout #:page-height 500
    
-   (titled-image-panel title
-                       (above/align "left"
-                                    (square 10 'solid 'transparent)
-                                    (text (~a " " sub-title) 15 'black)
-                                    (square 10 'solid 'transparent)
-                                    (rectangle 1000 427 'outline 'black)))))
+               (titled-image-panel title
+                                   (above/align "left"
+                                                (square 10 'solid 'transparent)
+                                                (text (~a " " sub-title) 15 'black)
+                                                (square 10 'solid 'transparent)
+                                                (rectangle 1000 200 'outline 'black)))))
 
 
 
 
 (define end-of-class-instructions
   (titled-image-panel #:fill 'lightgray
-                       "Instructor: Last 5-10 minutes"
-                       (bullets
-                         "Scratch: File > Download"
-                         "Change file name to student's first name"
-                         "Save in SAVE_MY_WORK"
-                         "Close Scratch & Leave open"
-                         "Wait for backup to finish")))
+                      "Instructor: Last 5-10 minutes"
+                      (bullets
+                       "Scratch: File > Download"
+                       "Change file name to student's first name"
+                       "Save in SAVE_MY_WORK"
+                       "Close Scratch & Leave open"
+                       "Wait for backup to finish")))
 
 (define end-of-class-instructions-short
   (titled-image-panel #:fill 'lightgray
-                       "Instructor: File > Download.  Save as student's name in SAVE_MY_WORK."
-                       (rectangle 900 1 'solid 'white)))
+                      "Instructor: File > Download.  Save as student's name in SAVE_MY_WORK."
+                      (rectangle 900 1 'solid 'white)))
 
 
 (define (draw-characters)
@@ -74,11 +74,11 @@
    (titled-image-panel #:fill 'lightgray
                        "Instructor: Before class"
                        (bullets
-                         "Open Chrome"
-                         "Click Scratch bookmark"
-                         "Click \"Create\""
-                         "Close tutorial panel on right"
-                         "Delete Sprite1 (cat)")
+                        "Open Chrome"
+                        "Click Scratch bookmark"
+                        "Click \"Create\""
+                        "Close tutorial panel on right"
+                        "Delete Sprite1 (cat)")
                        300)
    
    (titled-image-panel "1. Name your Comic Book"
@@ -98,17 +98,17 @@
 (define (resize-sprite-hint)
   (auto-layout #:page-height 500
    
-   (titled-image-panel "1. Select your tool"
-                       (local-bitmap "grow-shrink-tools.png"))
+               (titled-image-panel "1. Select your tool"
+                                   (local-bitmap "grow-shrink-tools.png"))
 
-   (titled-image-panel "2. Go to costumes"
-                       (local-bitmap "costume-tab.png"))
+               (titled-image-panel "2. Go to costumes"
+                                   (local-bitmap "costume-tab.png"))
 
-   (titled-image-panel "3. Select your sprite"
-                       (local-bitmap "shrink-click-sprite.png"))
+               (titled-image-panel "3. Select your sprite"
+                                   (local-bitmap "shrink-click-sprite.png"))
 
-   (titled-image-panel "4. Click on the tool to stop"
-                       (rectangle 900 1 'solid 'white))))
+               (titled-image-panel "4. Click on the tool to stop"
+                                   (rectangle 900 1 'solid 'white))))
 
 
 
@@ -117,11 +117,11 @@
    (titled-image-panel #:fill 'lightgray
                        "Instructor: Before class"
                        (bullets
-                         "Scan students in"
-                         "Open Chrome"
-                         "Open Scratch"
-                         "File > Upload from my computer"
-                         "Select file from SAVE_MY_WORK")
+                        "Scan students in"
+                        "Open Chrome"
+                        "Open Scratch"
+                        "File > Upload from my computer"
+                        "Select file from SAVE_MY_WORK")
                        400)
    
    (titled-image-panel "1. Finish characters"
@@ -284,33 +284,66 @@
 
 (define (our-house)
   (auto-layout #:page-height 1050
-   (titled-image-panel #:fill 'lightgray
-                       "INSTRUCTOR: Scan students in, open Scratch and File > Upload."
-                       (rectangle 900 1 'solid 'white))
+               (titled-image-panel #:fill 'lightgray
+                                   "INSTRUCTOR: Scan students in, open Scratch and File > Upload."
+                                   (rectangle 900 1 'solid 'white))
    
-   (titled-image-panel "1. Hide the Toys!"
-                       (local-bitmap "hide-the-toys.png"))
+               (titled-image-panel "1. Hide the Toys!"
+                                   (local-bitmap "hide-the-toys.png"))
 
-   (titled-image-panel "2. Create a New Backdrop and Draw House"
-                       (local-bitmap "new-backdrop.png"))
+               (titled-image-panel "2. Create a New Backdrop and Draw House"
+                                   (local-bitmap "new-backdrop.png"))
 
-   (titled-image-panel "3. Switching Backdrops Code"
-                       (local-bitmap "forever-next-backdrop-wait.png"))
+               (titled-image-panel "3. Switching Backdrops Code"
+                                   (local-bitmap "forever-next-backdrop-wait.png"))
    
-   (titled-image-panel "4. Click the Flag"
-                       (above
-                        (local-bitmap "click-run-small.png")
-                        (text "Now the background should change" 20 'black)
-                        (text "every five seconds" 20 'red)))
+               (titled-image-panel "4. Click the Flag"
+                                   (above
+                                    (local-bitmap "click-run-small.png")
+                                    (text "Now the background should change" 20 'black)
+                                    (text "every five seconds" 20 'red)))
    
-   (titled-image-panel "5. Create New Backdrop and Draw 2nd House"
-                       (local-bitmap "new-backdrop-2.png"))
+               (titled-image-panel "5. Create New Backdrop and Draw 2nd House"
+                                   (local-bitmap "new-backdrop-2.png"))
 
-   (titled-image-panel "6. Change Text and Click the Flag"
-                       (local-bitmap "change-text-and-run.png"))
+               (titled-image-panel "6. Change Text and Click the Flag"
+                                   (local-bitmap "change-text-and-run.png"))
    
-   end-of-class-instructions-short))
+               end-of-class-instructions-short))
 
+; Quest 9 Handout
+(define (all-friends)
+  (auto-layout #:page-height 1300
+               (titled-image-panel #:fill 'white
+                                   "Project 9 - Super Effects"
+                                   (overlay
+                                    (above
+                                     (text "Add these scripts to any of your sprites." 20 "black")
+                                     (text "You can add them to multiple sprites." 20 "black"))
+                                    (rectangle 900 5 'solid 'white)))
+               (titled-image-panel #:fill 'lightgray
+                                   "INSTRUCTOR: Scan students in, open Scratch and File > Upload."
+                                   (rectangle 900 1 'solid 'white))
+   
+               (titled-image-panel "1. Follow Effect - Add this code to any sprite"
+                                   (scale 0.8 (local-bitmap "follow-effect.png")))
+
+               (titled-image-panel "2. Spin Effect - Add this code to any sprite"
+                                   (scale 0.8 (local-bitmap "spin-effect.png")))
+
+               (titled-image-panel "3. Move Random Effect - Add this code to any sprite"
+                                   (scale 0.8 (local-bitmap "move-random-effect.png")))
+   
+               (titled-image-panel "4. Grow Effect - Add this code to any sprite"
+                                   (scale 0.8 (local-bitmap "grow-effect.png")))
+
+               (titled-image-panel "5. Shrink Effect - Add this code to any sprite"
+                                   (scale 0.8 (local-bitmap "shrink-effect.png")))
+
+               (titled-image-panel "6. Rainbow Effect - Add this code to any sprite"
+                                   (scale 0.75 (local-bitmap "rainbow-effect.png")))
+   
+               end-of-class-instructions-short))
 
 
 (define (quest1)
@@ -325,7 +358,7 @@
 
 (define (quest2)
   (list
-   (worksheet "First Background" "Where is this?")
+   ;(worksheet "First Background" "Where is this?")
    (draw-background)))
 
 
@@ -375,6 +408,10 @@
                      "Second Character's Home" "Where is it?")
    (our-house)))
 
+(define (quest9)
+  (list
+   (all-friends)))
+
 (define (quests)
   (list quest1
         quest2
@@ -382,4 +419,6 @@
         quest4
         quest5
         quest6
-        quest7))
+        quest7
+        quest8
+        quest9))

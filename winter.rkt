@@ -1,0 +1,85 @@
+#lang racket
+
+;Provide all your quests from main.
+(provide quests)
+
+(require pict/code)
+(require ts-curric-common)
+(require 2htdp/image)
+
+(require racket/runtime-path)
+(define-runtime-path images "images")
+
+(define (local-bitmap s)
+  (bitmap/file (~a (path->string images) "/" s)))
+
+(define (worksheet title sub-title)
+  (auto-layout #:page-height 500
+   
+               (titled-image-panel title
+                                   (above/align "left"
+                                                (square 10 'solid 'transparent)
+                                                (text (~a " " sub-title) 15 'black)
+                                                (square 10 'solid 'transparent)
+                                                (rectangle 1000 200 'outline 'black)))))
+
+(define start-of-class-instructions
+  (titled-image-panel #:fill 'lightgray
+                      "INSTRUCTOR: Scan QR starter code, select 'See inside'."
+                      (rectangle 1 1 'solid 'white)))
+
+(define end-of-class-instructions
+  (titled-image-panel #:fill 'lightgray
+                      "INSTRUCTOR: Have students help with clean up."
+                      (rectangle 1 1 'solid 'white)))
+
+(define (resize-sprite-hint)
+  (auto-layout #:page-height 500
+   
+               (titled-image-panel "1. Select your tool"
+                                   (local-bitmap "grow-shrink-tools.png"))
+
+               (titled-image-panel "2. Go to costumes"
+                                   (local-bitmap "costume-tab.png"))
+
+               (titled-image-panel "3. Select your sprite"
+                                   (local-bitmap "shrink-click-sprite.png"))
+
+               (titled-image-panel "4. Click on the tool to stop"
+                                   (rectangle 900 1 'solid 'white))))
+  
+(define (flying-superheroe)
+  (auto-layout #:page-height 1200
+   start-of-class-instructions
+
+   (titled-image-panel "1. Meet Major Triumph!\nWe need to give help him walk!"
+                       (scale 2.5 (local-bitmap "major-triumph-step-right.png")))
+
+   (titled-image-panel "2. Look at the code."
+                       (scale 0.6 (local-bitmap "winter-p1-starter.png")))
+
+   (titled-image-panel "3. Walk to the rigth!"
+                       (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
+
+   (titled-image-panel "4. Walk to the left!"
+                       (scale 0.9 (local-bitmap "winter-p1-move-2.png")))
+      
+   (titled-image-panel "5. Create another script."
+                       (scale 0.8 (local-bitmap "winter-p1-animate-1.png")))
+
+   (titled-image-panel "6. Check for key pressed."
+                       (scale 0.8 (local-bitmap "winter-p1-animate-2.png")))
+
+   (titled-image-panel "7. Animate it!"
+                       (scale 0.8 (local-bitmap "winter-p1-animate-3.png")))
+                              
+   end-of-class-instructions))
+
+(define (quest1)
+  (list
+   (flying-superheroe)
+   ))
+
+
+(define (quests)
+  (list quest1))
