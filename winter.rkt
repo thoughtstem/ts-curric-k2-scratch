@@ -75,11 +75,38 @@
                               
    end-of-class-instructions))
 
+(define (flying-superhero)
+  (auto-layout #:page-height 1200
+   start-of-class-instructions
+
+   (titled-image-panel "1. Look at the code\n He can walk!"
+                       (scale .5 (local-bitmap "winter-p2-starter.png")))
+
+   (titled-image-panel "2. Add animation!"
+                       (scale .7 (local-bitmap "winter-p2-animate.png")))
+
+   (titled-image-panel "3. Let's make him fly!"
+                       (scale .7 (local-bitmap "winter-p2-fly-1.png")))
+
+   (titled-image-panel "4. Let's make him fly!"
+                       (scale .7 (local-bitmap "winter-p2-fly-2.png")))
+
+   (titled-image-panel "5. Let's make him fly!"
+                       (scale .7 (local-bitmap "winter-p2-fly-3.png")))
+
+                              
+   end-of-class-instructions))
+
 (define (quest1)
   (list
    (walking-superhero)
    ))
 
+(define (quest2)
+  (list
+   (flying-superhero)
+   ))
 
 (define (quests)
-  (list quest1))
+  (list quest1
+        quest2))
