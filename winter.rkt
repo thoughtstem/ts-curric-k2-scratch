@@ -23,15 +23,39 @@
                                                 (square 10 'solid 'transparent)
                                                 (rectangle 1000 200 'outline 'black)))))
 
-(define (start-of-class-instructions qr)
+(define/contract (start-of-class-instructions qr n)
+  (-> string? string? panel?)
   (titled-image-panel #:fill 'lightgray
                       "INSTRUCTOR: Scan QR starter code, select 'See inside'."
-                      (scale 0.5 (local-bitmap qr))))
+                      (beside
+                       (scale 0.5 (local-bitmap qr))
+                       (rectangle 100 1 'solid 'transparent)
+                       (above
+                        (text "Complete Project:" 15 'black)
+                        (square 5 'solid 'transparent)
+                        (text n 15  'black)))))
 
 (define end-of-class-instructions
   (titled-image-panel #:fill 'lightgray
                       "INSTRUCTOR: Have students help with clean up."
                       (rectangle 1 1 'solid 'white)))
+
+#;(define (design-your-own-sprite-challenge)
+  (auto-layout #:page-height 500
+
+               (titled-image-panel "Draw Your Own Superhero!"
+                                   (square 1 'solid 'transparent))
+
+               (titled-image-panel "1. Click on Costumes"
+                                   (local-bitmap "costume-tab.png"))
+
+               (titled-image-panel "2. Clear Existing Sprite"
+                                   (local-bitmap "winter-challenge-1.png"))
+
+               (titled-image-panel "3. Draw "
+                                   (local-bitmap "winter-challenge-1.png")
+               )))
+
 
 (define (resize-sprite-hint)
   (auto-layout #:page-height 500
@@ -51,7 +75,7 @@
 (define (walking-superhero)
   (auto-layout #:page-height 1200
                 
-   (start-of-class-instructions "starter-1-qr.png")
+   (start-of-class-instructions "starter-1-qr.png" "266345757")
 
    (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
                        (scale 2.5 (local-bitmap "major-triumph-step-right.png")))
@@ -82,7 +106,7 @@
    ))
 
 (module+ test
-  (quest1))
+  (design-your-own-sprite-challenge))
 
 (define (quests)
   (list quest1))
