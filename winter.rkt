@@ -89,10 +89,10 @@
    (titled-image-panel "3. Let's make him fly!"
                        (scale .7 (local-bitmap "winter-p2-fly-1.png")))
 
-   (titled-image-panel "4. Let's make him fly!"
+   (titled-image-panel "4. Make him glide away!"
                        (scale .7 (local-bitmap "winter-p2-fly-2.png")))
 
-   (titled-image-panel "5. Let's make him fly!"
+   (titled-image-panel "5. Make him come back!"
                        (scale .7 (local-bitmap "winter-p2-fly-3.png")))
 
                               
