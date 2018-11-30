@@ -23,10 +23,10 @@
                                                 (square 10 'solid 'transparent)
                                                 (rectangle 1000 200 'outline 'black)))))
 
-(define start-of-class-instructions
+(define (start-of-class-instructions qr)
   (titled-image-panel #:fill 'lightgray
                       "INSTRUCTOR: Scan QR starter code, select 'See inside'."
-                      (rectangle 1 1 'solid 'white)))
+                      (scale 0.5 (local-bitmap qr))))
 
 (define end-of-class-instructions
   (titled-image-panel #:fill 'lightgray
@@ -50,13 +50,14 @@
   
 (define (walking-superhero)
   (auto-layout #:page-height 1200
-   start-of-class-instructions
+                
+   (start-of-class-instructions "starter-1-qr.png")
 
-   (titled-image-panel "1. Meet Major Triumph!\nWe need to give help him walk!"
+   (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
                        (scale 2.5 (local-bitmap "major-triumph-step-right.png")))
 
-   (titled-image-panel "2. Look at the code."
-                       (scale 0.6 (local-bitmap "winter-p1-starter.png")))
+   (titled-image-panel "2. Check out the code."
+                       (scale 0.7 (local-bitmap "winter-p1-starter.png")))
 
    (titled-image-panel "3. Walk to the right!"
                        (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
@@ -77,13 +78,13 @@
 
 (define (flying-superhero)
   (auto-layout #:page-height 1200
-   start-of-class-instructions
+   (start-of-class-instructions "starter-1-qr.png") ;CHANGE TO #2!!!!
 
    (titled-image-panel "1. Look at the code\n He can walk!"
                        (scale .5 (local-bitmap "winter-p2-starter.png")))
 
    (titled-image-panel "2. Add animation!"
-                       (scale .7 (local-bitmap "winter-p2-animate.png")))
+                       (scale .6 (local-bitmap "winter-p2-animate.png")))
 
    (titled-image-panel "3. Let's make him fly!"
                        (scale .7 (local-bitmap "winter-p2-fly-1.png")))
@@ -106,6 +107,10 @@
   (list
    (flying-superhero)
    ))
+
+(module+ test
+  (quest1)
+  (quest2))
 
 (define (quests)
   (list quest1
