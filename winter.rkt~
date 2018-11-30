@@ -48,7 +48,7 @@
                (titled-image-panel "4. Click on the tool to stop"
                                    (rectangle 900 1 'solid 'white))))
   
-(define (walking-superhero)
+(define (flying-superheroe)
   (auto-layout #:page-height 1200
    start-of-class-instructions
 
@@ -58,7 +58,7 @@
    (titled-image-panel "2. Look at the code."
                        (scale 0.6 (local-bitmap "winter-p1-starter.png")))
 
-   (titled-image-panel "3. Walk to the right!"
+   (titled-image-panel "3. Walk to the rigth!"
                        (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
 
    (titled-image-panel "4. Walk to the left!"
@@ -77,7 +77,7 @@
 
 (define (quest1)
   (list
-   (walking-superhero)
+   (flying-superheroe)
    ))
 
 
