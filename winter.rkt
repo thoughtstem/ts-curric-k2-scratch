@@ -40,21 +40,23 @@
                       "INSTRUCTOR: Have students help with clean up."
                       (rectangle 1 1 'solid 'white)))
 
-#;(define (design-your-own-sprite-challenge)
-  (auto-layout #:page-height 500
+(define (edit-sprite-challenge)
+  (auto-layout #:page-height 600
 
-               (titled-image-panel "Draw Your Own Superhero!"
-                                   (square 1 'solid 'transparent))
+               (titled-image-panel "Edit the Superhero!"
+                                   (beside
+                                    (scale .5 (local-bitmap "winter-challenge-1.png"))
+                                    (scale .5 (local-bitmap "winter-challenge-2.png"))))
 
                (titled-image-panel "1. Click on Costumes"
                                    (local-bitmap "costume-tab.png"))
 
-               (titled-image-panel "2. Clear Existing Sprite"
-                                   (local-bitmap "winter-challenge-1.png"))
+               (titled-image-panel "2. Zoom in!"
+                                   (scale .7 (local-bitmap "winter-zoom-in.png")))
 
-               (titled-image-panel "3. Draw "
-                                   (local-bitmap "winter-challenge-1.png")
-               )))
+               (titled-image-panel "3. Change the Superhero! -- Try Changing the colors with the Fill Bucket or drawing something new with the Brush!"
+                                   (scale .7 (local-bitmap "paint-a-character.png")))
+               ))
 
 
 (define (resize-sprite-hint)
@@ -102,7 +104,7 @@
 
 (define (flying-superhero)
   (auto-layout #:page-height 1200
-   (start-of-class-instructions "starter-2-qr.png" "get number here") ;CHANGE TO #2!!!!
+   (start-of-class-instructions "starter-2-qr.png" "266610880") ;CHANGE TO #2!!!!
 
    (titled-image-panel "1. Look at the code\n He can walk!"
                        (scale .5 (local-bitmap "winter-p2-starter.png")))
@@ -117,7 +119,7 @@
                        (scale .7 (local-bitmap "winter-p2-fly-2.png")))
 
    (titled-image-panel "5. Let's make him fly!"
-                       (scale .7 (local-bitmap "winter-p2-fly-3.png")))
+                       (local-bitmap "winter-p2-fly-3.png"))
 
                               
    end-of-class-instructions))
@@ -133,8 +135,10 @@
    ))
 
 (module+ test
+  (edit-sprite-challenge)
   (quest1)
-  (quest2))
+  (quest2)
+  )
 
 (define (quests)
   (list quest1
