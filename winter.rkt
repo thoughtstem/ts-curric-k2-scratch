@@ -23,8 +23,8 @@
                                                 (square 10 'solid 'transparent)
                                                 (rectangle 1000 200 'outline 'black)))))
 
-(define/contract (start-of-class-instructions qr n)
-  (-> string? string? panel?)
+(define #;/contract (start-of-class-instructions qr n)
+  ;(-> string? string? panel?)
   (titled-image-panel #:fill 'lightgray
                       "INSTRUCTOR: Scan QR starter code, select 'See inside'."
                       (beside
@@ -78,7 +78,7 @@
    (start-of-class-instructions "starter-1-qr.png" "266345757")
 
    (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
-                       (scale 2.5 (local-bitmap "major-triumph-step-right.png")))
+                       (scale .7 (local-bitmap "major-triumph-step-right.png")))
 
    (titled-image-panel "2. Check out the code."
                        (scale 0.7 (local-bitmap "winter-p1-starter.png")))
@@ -102,7 +102,7 @@
 
 (define (flying-superhero)
   (auto-layout #:page-height 1200
-   (start-of-class-instructions "starter-2-qr.png" "get number here") ;CHANGE TO #2!!!!
+   (start-of-class-instructions "starter-2-qr.png" "get number here") ;TODO Project #!!!!
 
    (titled-image-panel "1. Look at the code\n He can walk!"
                        (scale .5 (local-bitmap "winter-p2-starter.png")))
@@ -122,6 +122,30 @@
                               
    end-of-class-instructions))
 
+(define (changing-costumes)
+  (auto-layout #:page-height 1200
+   (start-of-class-instructions "starter-1-qr.png" "<- fix qr") ;TODO Project 3 QR & #!!!!
+
+   (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
+                       (scale .6 (local-bitmap "winter-p3-starter.png")))
+
+   (titled-image-panel "2. Add a transform key."
+                       (scale .7 (local-bitmap "winter-p3-space-1.png")))
+
+   (titled-image-panel "3. Send the position and hide!"
+                       (scale .7 (local-bitmap "winter-p3-space-2.png")))
+
+   (titled-image-panel "4. Help Gallium-Man walk!"
+                       (scale .7 (local-bitmap "winter-p3-move-1.png")))
+
+   (titled-image-panel "5. Move Gallium-Man."
+                       (scale .6 (local-bitmap "winter-p3-move-2.png")))
+
+   (titled-image-panel "6. Animate Gallium-Man!"
+                       (scale .6 (local-bitmap "winter-p3-animate.png")))
+      
+   end-of-class-instructions))
+
 (define (quest1)
   (list
    (walking-superhero)
@@ -132,9 +156,15 @@
    (flying-superhero)
    ))
 
+(define (quest3)
+  (list
+   (changing-costumes)
+   ))
+
 (module+ test
-  (quest1)
-  (quest2))
+  ;(quest1)
+  ;(quest2)
+  (quest3))
 
 (define (quests)
   (list quest1
