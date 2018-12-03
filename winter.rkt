@@ -54,7 +54,7 @@
                (titled-image-panel "2. Zoom in!"
                                    (scale .7 (local-bitmap "winter-zoom-in.png")))
 
-               (titled-image-panel "3. Change the Superhero! -- Try Changing the colors with the Fill Bucket or drawing something new with the Brush!"
+               (titled-image-panel "3. Change the Superhero!\nTry Changing the colors with the Fill Bucket or drawing something new with the Brush!"
                                    (scale .7 (local-bitmap "paint-a-character.png")))
                ))
 
@@ -105,7 +105,7 @@
 (define (flying-superhero)
   (auto-layout #:page-height 1200
 
-   (start-of-class-instructions "starter-2-qr.png" "266610880") ;CHANGE TO #2!!!!
+   (start-of-class-instructions "starter-2-qr.png" "266610880")
 
    (titled-image-panel "1. Look at the code\n He can walk!"
                        (scale .5 (local-bitmap "winter-p2-starter.png")))
@@ -129,7 +129,8 @@
    (start-of-class-instructions "starter-1-qr.png" "<- fix qr") ;TODO Project 3 QR & #!!!!
 
    (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
-                       (scale .6 (local-bitmap "winter-p3-starter.png")))
+                       (beside (local-bitmap "tommy-bark-1.png")
+                               (scale .6 (local-bitmap "winter-p3-starter.png"))))
 
    (titled-image-panel "2. Add a transform key."
                        (scale .7 (local-bitmap "winter-p3-space-1.png")))
@@ -148,6 +149,27 @@
       
    end-of-class-instructions))
 
+(define (fly-gallium-man)
+  (auto-layout #:page-height 1200
+   (start-of-class-instructions "starter-1-qr.png" "<- fix qr") ;TODO Project 3 QR & #!!!!
+
+   (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
+                       (scale .6 (local-bitmap "winter-p4-fly-1.png")))
+
+   (titled-image-panel "2. Add the key pressed? blocks!"
+                       (scale .6 (local-bitmap "winter-p4-fly-2.png")))
+
+   (titled-image-panel "3. Help him fly up!"
+                       (scale .6 (local-bitmap "winter-p4-fly-3.png")))
+
+   (titled-image-panel "4. Help him fly down!"
+                       (scale .6 (local-bitmap "winter-p4-fly-4.png")))
+
+   (titled-image-panel "5. Challenge\nThrow an Energy Ball!"
+                       (scale .6 (local-bitmap "winter-p4-energize.png")))
+    
+   end-of-class-instructions))
+
 (define (quest1)
   (list
    (walking-superhero)
@@ -163,14 +185,28 @@
    (changing-costumes)
    ))
 
+(define (quest4)
+  (list
+   (fly-gallium-man)
+   ))
+
+; -- CHALLENGES
+(define  (edit-sprite)
+  (list (edit-sprite-challenge)
+        (edit-sprite-challenge)))
+
 (module+ test
   ;(quest1)
   ;(quest2)
   (quest3)
-  (edit-sprite-challenge))
+  (quest4)
+  ;(edit-sprite)
+  )
 
 (define (quests)
   (list quest1
         quest2
         quest3
+        quest4
+        edit-sprite
         ))
