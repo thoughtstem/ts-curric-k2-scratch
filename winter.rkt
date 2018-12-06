@@ -76,99 +76,118 @@
   
 (define (walking-superhero)
   (auto-layout #:page-height 1200
-                
-   (start-of-class-instructions "starter-1-qr.png" "266345757")
+               (titled-image-panel #:fill 'white
+                                   "Project 1"
+                                   (rectangle 1 1 'solid 'white))
+               
+               (start-of-class-instructions "starter-1-qr.png" "266345757")
 
-   (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
-                       (scale .7 (local-bitmap "major-triumph-step-right.png")))
+               (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
+                                   (scale .7 (local-bitmap "major-triumph-1.png")))
 
-   (titled-image-panel "2. Check out the code."
-                       (scale 0.7 (local-bitmap "winter-p1-starter.png")))
+               (titled-image-panel "2. Check out the code."
+                                   (scale 0.6 (local-bitmap "winter-p1-starter.png")))
 
-   (titled-image-panel "3. Walk to the right!"
-                       (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
+               (titled-image-panel "3. Walk to the right!"
+                                   (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
 
-   (titled-image-panel "4. Walk to the left!"
-                       (scale 0.9 (local-bitmap "winter-p1-move-2.png")))
+               (titled-image-panel "4. Walk to the left!"
+                                   (scale 0.9 (local-bitmap "winter-p1-move-2.png")))
       
-   (titled-image-panel "5. Create another script."
-                       (scale 0.8 (local-bitmap "winter-p1-animate-1.png")))
+               (titled-image-panel "5. Create another script."
+                                   (scale 0.8 (local-bitmap "winter-p1-animate-1.png")))
 
-   (titled-image-panel "6. Check for key pressed."
-                       (scale 0.8 (local-bitmap "winter-p1-animate-2.png")))
+               (titled-image-panel "6. Check for key pressed."
+                                   (scale 0.8 (local-bitmap "winter-p1-animate-2.png")))
 
-   (titled-image-panel "7. Animate it!"
-                       (scale 0.8 (local-bitmap "winter-p1-animate-3.png")))
+               (titled-image-panel "7. Animate it!"
+                                   (scale 0.8 (local-bitmap "winter-p1-animate-3.png")))
                               
-   end-of-class-instructions))
+               end-of-class-instructions))
 
 (define (flying-superhero)
   (auto-layout #:page-height 1200
 
-   (start-of-class-instructions "starter-2-qr.png" "266610880")
+               (titled-image-panel #:fill 'white
+                                   "Project 2"
+                                   (rectangle 1 1 'solid 'white))
+               
+               (start-of-class-instructions "starter-2-qr.png" "266610880")
 
-   (titled-image-panel "1. Look at the code\n He can walk!"
-                       (scale .5 (local-bitmap "winter-p2-starter.png")))
+               (titled-image-panel "1. Look at the code\n He can walk!"
+                                   (scale .5 (local-bitmap "winter-p2-starter.png")))
 
-   (titled-image-panel "2. Add animation!"
-                       (scale .6 (local-bitmap "winter-p2-animate.png")))
+               (titled-image-panel "2. Add animation!"
+                                   (scale .6 (local-bitmap "winter-p2-animate.png")))
 
-   (titled-image-panel "3. Let's make him fly!"
-                       (scale .7 (local-bitmap "winter-p2-fly-1.png")))
+               (titled-image-panel "3. Let's make him fly!"
+                                   (scale .7 (local-bitmap "winter-p2-fly-1.png")))
 
-   (titled-image-panel "4. Make him glide away!"
-                       (scale .7 (local-bitmap "winter-p2-fly-2.png")))
+               (titled-image-panel "4. Make him glide away!"
+                                   (scale .7 (local-bitmap "winter-p2-fly-2.png")))
 
-   (titled-image-panel "5. Make him come back!"
-                       (scale .7 (local-bitmap "winter-p2-fly-3.png")))
+               (titled-image-panel "5. Make him come back!"
+                                   (scale .8 (local-bitmap "winter-p2-fly-3.png")))
                               
-   end-of-class-instructions))
+               end-of-class-instructions))
 
 (define (changing-costumes)
   (auto-layout #:page-height 1200
-   (start-of-class-instructions "starter-1-qr.png" "<- fix qr") ;TODO Project 3 QR & #!!!!
 
-   (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
-                       (beside (local-bitmap "tommy-bark-1.png")
-                               (scale .6 (local-bitmap "winter-p3-starter.png"))))
+               (titled-image-panel #:fill 'white
+                                   "Project 3"
+                                   (rectangle 1 1 'solid 'white))
+               
+               (start-of-class-instructions "starter-3-qr.png" "268486163") ;TODO Project 3 QR & #!!!!
 
-   (titled-image-panel "2. Add a transform key."
-                       (scale .7 (local-bitmap "winter-p3-space-1.png")))
+               (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
+                                   (beside (local-bitmap "tommy-bark-1.png")
+                                           (scale .5 (local-bitmap "winter-p3-starter.png"))))
 
-   (titled-image-panel "3. Send the position and hide!"
-                       (scale .7 (local-bitmap "winter-p3-space-2.png")))
+               (titled-image-panel "2. Add a transform key."
+                                   (scale .7 (local-bitmap "winter-p3-space-1.png")))
 
-   (titled-image-panel "4. Help Gallium-Man walk!"
-                       (scale .7 (local-bitmap "winter-p3-move-1.png")))
+               (titled-image-panel "3. Send the position and hide!"
+                                   (scale .8 (local-bitmap "winter-p3-space-2.png")))
 
-   (titled-image-panel "5. Move Gallium-Man."
-                       (scale .6 (local-bitmap "winter-p3-move-2.png")))
+               (titled-image-panel "4. Help Gallium-Man walk!"
+                                   (beside (scale .5 (local-bitmap "gallium-man-1.png"))
+                                           (scale .7 (local-bitmap "winter-p3-move-1.png"))))
 
-   (titled-image-panel "6. Animate Gallium-Man!"
-                       (scale .6 (local-bitmap "winter-p3-animate.png")))
+               (titled-image-panel "5. Move Gallium-Man."
+                                   (scale .6 (local-bitmap "winter-p3-move-2.png")))
+
+               (titled-image-panel "6. Animate Gallium-Man!"
+                                   (scale .6 (local-bitmap "winter-p3-animate.png")))
       
-   end-of-class-instructions))
+               end-of-class-instructions))
 
 (define (fly-gallium-man)
   (auto-layout #:page-height 1200
-   (start-of-class-instructions "starter-1-qr.png" "<- fix qr") ;TODO Project 3 QR & #!!!!
 
-   (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
-                       (scale .6 (local-bitmap "winter-p4-fly-1.png")))
+               (titled-image-panel #:fill 'white
+                                   "Project 4"
+                                   (rectangle 1 1 'solid 'white))
+               
+               (start-of-class-instructions "starter-1-qr.png" "266609923") ;TODO Project 3 QR & #!!!!
 
-   (titled-image-panel "2. Add the key pressed? blocks!"
-                       (scale .6 (local-bitmap "winter-p4-fly-2.png")))
+               (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
+                                   (beside (scale .3 (local-bitmap "gallium-man-1.png"))
+                                           (scale .6 (local-bitmap "winter-p4-fly-1.png"))))
 
-   (titled-image-panel "3. Help him fly up!"
-                       (scale .6 (local-bitmap "winter-p4-fly-3.png")))
+               (titled-image-panel "2. Add the key pressed? blocks!"
+                                   (scale .6 (local-bitmap "winter-p4-fly-2.png")))
 
-   (titled-image-panel "4. Help him fly down!"
-                       (scale .6 (local-bitmap "winter-p4-fly-4.png")))
+               (titled-image-panel "3. Help him fly up!"
+                                   (scale .6 (local-bitmap "winter-p4-fly-3.png")))
 
-   (titled-image-panel "5. Challenge\nThrow an Energy Ball!"
-                       (scale .6 (local-bitmap "winter-p4-energize.png")))
+               (titled-image-panel "4. Help him fly down!"
+                                   (scale .6 (local-bitmap "winter-p4-fly-4.png")))
+
+               (titled-image-panel "5. Challenge\nThrow an Energy Ball!"
+                                   (scale .6 (local-bitmap "winter-p4-energize.png")))
     
-   end-of-class-instructions))
+               end-of-class-instructions))
 
 (define (quest1)
   (list
@@ -200,7 +219,7 @@
   ;(quest2)
   (quest3)
   (quest4)
-  ;(edit-sprite)
+  (edit-sprite)
   )
 
 (define (quests)
