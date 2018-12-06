@@ -151,7 +151,7 @@
                                    (scale .8 (local-bitmap "winter-p3-space-2.png")))
 
                (titled-image-panel "4. Help Gallium-Man walk!"
-                                   (beside (scale .5 (local-bitmap "gallium-man-1.png"))
+                                   (beside (scale .8 (local-bitmap "gallium-man-1.png"))
                                            (scale .7 (local-bitmap "winter-p3-move-1.png"))))
 
                (titled-image-panel "5. Move Gallium-Man."
@@ -172,7 +172,7 @@
                (start-of-class-instructions "starter-1-qr.png" "266609923") ;TODO Project 3 QR & #!!!!
 
                (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
-                                   (beside (scale .3 (local-bitmap "gallium-man-1.png"))
+                                   (beside (scale .8 (local-bitmap "gallium-man-1.png"))
                                            (scale .6 (local-bitmap "winter-p4-fly-1.png"))))
 
                (titled-image-panel "2. Add the key pressed? blocks!"
@@ -217,15 +217,17 @@
 (module+ test
   ;(quest1)
   ;(quest2)
+  ;(edit-sprite)
   (quest3)
   (quest4)
-  (edit-sprite)
+
   )
 
 (define (quests)
   (list quest1
         quest2
+        edit-sprite
         quest3
         quest4
-        edit-sprite
+        
         ))
