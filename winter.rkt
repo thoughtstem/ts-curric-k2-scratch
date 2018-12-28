@@ -138,7 +138,7 @@
                                    "Project 3"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-3-qr.png" "268486163") ;TODO Project 3 QR & #!!!!
+               (start-of-class-instructions "starter-3-qr.png" "268486163")
 
                (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
                                    (beside (local-bitmap "tommy-bark-1.png")
@@ -169,7 +169,7 @@
                                    "Project 4"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-1-qr.png" "266609923") ;TODO Project 3 QR & #!!!!
+               (start-of-class-instructions "starter-4-qr.png" "268484911")
 
                (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
                                    (beside (scale .8 (local-bitmap "gallium-man-1.png"))
