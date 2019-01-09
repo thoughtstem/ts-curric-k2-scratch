@@ -45,17 +45,19 @@
 
                (titled-image-panel "Edit the Superhero!"
                                    (beside
-                                    (scale .5 (local-bitmap "winter-challenge-1.png"))
-                                    (scale .5 (local-bitmap "winter-challenge-2.png"))))
+                                    (scale .3 (local-bitmap "winter-challenge-1.png"))
+                                    (scale .3 (local-bitmap "winter-challenge-2.png"))))
 
                (titled-image-panel "1. Click on Costumes"
-                                   (local-bitmap "costume-tab.png"))
+                                   (scale .5 (local-bitmap "costume-tab.png")))
 
                (titled-image-panel "2. Zoom in!"
-                                   (scale .7 (local-bitmap "winter-zoom-in.png")))
+                                   (scale .6 (local-bitmap "winter-zoom-in.png")))
 
                (titled-image-panel "3. Change the Superhero!\nTry Changing the colors with the Fill Bucket or drawing something new with the Brush!"
-                                   (scale .7 (local-bitmap "paint-a-character.png")))
+                                   (beside 
+                                    (scale .6 (local-bitmap "paint-a-character-1.png"))
+                                    (scale .8 (local-bitmap "paint-a-character-2.png"))))
                ))
 
 
@@ -217,9 +219,9 @@
 (module+ test
   ;(quest1)
   ;(quest2)
-  ;(edit-sprite)
-  (quest3)
-  (quest4)
+  (edit-sprite)
+  ;(quest3)
+  ;(quest4)
 
   )
 
