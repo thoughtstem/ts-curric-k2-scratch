@@ -1,5 +1,13 @@
 #lang racket
 
+;TODO
+; -- create beginner starter projects 1-5
+; -- create QRs for beginner starters
+; -- create QRs for completes
+; -- replace QRs & numbers in (all-qrs)
+; -- take QRs and complete proj numbers out of full pages
+; -- resize images on complete pages?
+
 ;Provide all your quests from main.
 (provide quests)
 
@@ -34,6 +42,28 @@
                         (text "Complete Project:" 15 'black)
                         (square 5 'solid 'transparent)
                         (text n 15  'black)))))
+
+(define/contract (qr-holder proj qr1 n1 qr2 n2 qr3 n3)
+  (-> number? string? number? string? number? string? number? panel?)
+  (titled-image-panel (~a "Project " proj)
+                      (beside
+                       (above
+                        (text "Beginner" 25 'black)
+                        (scale .6 (local-bitmap qr1))
+                        (text "Project Number:" 15 'black)
+                        (text (number->string n1) 15 'black))
+                       (rectangle 30 1 'solid 'transparent)
+                       (above
+                        (text "Advanced" 25 'black)
+                        (scale .6 (local-bitmap qr2))
+                        (text "Project Number:" 15 'black)
+                        (text (number->string n2) 15 'black))
+                       (rectangle 30 1 'solid 'transparent)
+                       (above
+                        (text "Completed" 25 'black)
+                        (scale .6 (local-bitmap qr3))
+                        (text "Project Number:" 15 'black)
+                        (text (number->string n3) 15 'black)))))
 
 (define end-of-class-instructions
   (titled-image-panel #:fill 'lightgray
@@ -223,6 +253,39 @@
     
                end-of-class-instructions))
 
+(define (all-qrs)
+  (auto-layout #:page-height 1200
+
+               (titled-image-panel #:fill 'white
+                                   "All QRS"
+                                   (rectangle 1 1 'solid 'white))
+        
+               (qr-holder 1
+                          "starter-1-qr.png" 266345757
+                          "starter-1-qr.png" 266345757
+                          "starter-1-qr.png" 266345757)
+
+               (qr-holder 2
+                          "starter-2-qr.png" 266610880
+                          "starter-2-qr.png" 266610880
+                          "starter-2-qr.png" 266610880)
+
+               (qr-holder 3
+                          "starter-3-qr.png" 268486163
+                          "starter-3-qr.png" 268486163
+                          "starter-3-qr.png" 268486163)
+
+               (qr-holder 4
+                          "starter-4-qr.png" 266609923
+                          "starter-4-qr.png" 266609923
+                          "starter-4-qr.png" 266609923)
+
+               (qr-holder 5
+                          "starter-5-qr.png" 279876349
+                          "starter-5-qr.png" 279876349
+                          "starter-5-qr.png" 279876349)
+               ))
+
 (define (quest1)
   (list
    (walking-superhero)
@@ -259,7 +322,8 @@
   ;(edit-sprite)
   ;(quest3)
   ;(quest4)
-  (quest5)
+  ;(quest5)
+  (all-qrs)
 
   )
 
