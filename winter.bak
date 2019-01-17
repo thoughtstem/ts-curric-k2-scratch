@@ -45,19 +45,19 @@
 
                (titled-image-panel "Edit the Superhero!"
                                    (beside
-                                    (scale .5 (local-bitmap "winter-challenge-1.png"))
-                                    (scale .5 (local-bitmap "winter-challenge-2.png"))))
+                                    (scale .3 (local-bitmap "winter-challenge-1.png"))
+                                    (scale .3 (local-bitmap "winter-challenge-2.png"))))
 
                (titled-image-panel "1. Click on Costumes"
-                                   (local-bitmap "costume-tab.png"))
+                                   (scale .5 (local-bitmap "costume-tab.png")))
 
                (titled-image-panel "2. Zoom in!"
-                                   (scale .7 (local-bitmap "winter-zoom-in.png")))
+                                   (scale .6 (local-bitmap "winter-zoom-in.png")))
 
                (titled-image-panel "3. Change the Superhero!\nTry Changing the colors with the Fill Bucket or drawing something new with the Brush!"
                                    (beside 
-                                    (scale .7 (local-bitmap "paint-a-character-1.png"))
-                                    (scale .7 (local-bitmap "paint-a-character-2.png"))))
+                                    (scale .6 (local-bitmap "paint-a-character-1.png"))
+                                    (scale .8 (local-bitmap "paint-a-character-2.png"))))
                ))
 
 
@@ -171,7 +171,7 @@
                                    "Project 4"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-4-qr.png" "268484911")
+               (start-of-class-instructions "starter-4-qr.png" "266609923")
 
                (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
                                    (beside (scale .8 (local-bitmap "gallium-man-1.png"))
@@ -220,7 +220,7 @@
   ;(quest1)
   ;(quest2)
   ;(edit-sprite)
-  (quest3)
+  ;(quest3)
   (quest4)
 
   )

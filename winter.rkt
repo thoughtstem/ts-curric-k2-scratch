@@ -171,7 +171,7 @@
                                    "Project 4"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-4-qr.png" "268484911")
+               (start-of-class-instructions "starter-4-qr.png" "266609923")
 
                (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
                                    (beside (scale .8 (local-bitmap "gallium-man-1.png"))
@@ -188,6 +188,38 @@
 
                (titled-image-panel "5. Challenge\nThrow an Energy Ball!"
                                    (scale .6 (local-bitmap "winter-p4-energize.png")))
+    
+               end-of-class-instructions))
+
+(define (arachnid-boy-climbing)
+  (auto-layout #:page-height 1200
+
+               (titled-image-panel #:fill 'white
+                                   "Project 5"
+                                   (rectangle 1 1 'solid 'white))
+               
+               (start-of-class-instructions "starter-5-qr.png" "279876349")
+
+               (titled-image-panel "1. Meet Arachnid-Boy!"
+                                   (scale .4 (local-bitmap "arachnid-boy.png"))
+                                           #;(scale .5 (local-bitmap "winter-p5-starter.png")))
+
+               (titled-image-panel "2. Help him move up and down!"
+                                   (scale .7 (local-bitmap "winter-p5-point-90.png")))
+
+               (titled-image-panel "3. Change the Y position!"
+                                   (scale .7 (local-bitmap "winter-p5-change-y.png")))
+
+               (titled-image-panel "4. Create a Web clone!"
+                                   (scale .7 (local-bitmap "winter-p5-clone.png")))
+
+               (titled-image-panel "5. Shoot Web!"
+                                   (scale .7 (local-bitmap "winter-p5-wait.png")))
+
+               (titled-image-panel "6. Challenge\nMake Poison respawn!"
+                                   (beside
+                                    (scale .4 (local-bitmap "poison.png"))
+                                    (scale .8 (local-bitmap "winter-p5-poison-challenge.png"))))
     
                end-of-class-instructions))
 
@@ -211,6 +243,11 @@
    (fly-gallium-man)
    ))
 
+(define (quest5)
+  (list
+   (arachnid-boy-climbing)
+   ))
+
 ; -- CHALLENGES
 (define  (edit-sprite)
   (list (edit-sprite-challenge)
@@ -219,9 +256,10 @@
 (module+ test
   ;(quest1)
   ;(quest2)
-  (edit-sprite)
+  ;(edit-sprite)
   ;(quest3)
   ;(quest4)
+  (quest5)
 
   )
 
@@ -231,5 +269,5 @@
         edit-sprite
         quest3
         quest4
-        
+        quest5
         ))
