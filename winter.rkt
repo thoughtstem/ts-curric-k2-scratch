@@ -5,13 +5,12 @@
 ; -- create QRs for beginner starters
 ; -- create QRs for completes
 ; -- replace QRs & numbers in (all-qrs)
-; -- take QRs and complete proj numbers out of full pages
 ; -- resize images on complete pages?
 
 ;Provide all your quests from main.
 (provide quests)
 
-(require pict/code)
+;(require pict/code)
 (require ts-curric-common)
 (require 2htdp/image)
 
@@ -31,34 +30,28 @@
                                                 (square 10 'solid 'transparent)
                                                 (rectangle 1000 200 'outline 'black)))))
 
-(define #;/contract (start-of-class-instructions qr n)
+(define #;/contract start-of-class-instructions
   ;(-> string? string? panel?)
   (titled-image-panel #:fill 'lightgray
                       "INSTRUCTOR: Scan QR starter code, select 'See inside'."
-                      (beside
-                       (scale 0.5 (local-bitmap qr))
-                       (rectangle 100 1 'solid 'transparent)
-                       (above
-                        (text "Complete Project:" 15 'black)
-                        (square 5 'solid 'transparent)
-                        (text n 15  'black)))))
+                      (rectangle 1 1 'solid 'white)))
 
-(define/contract (qr-holder proj qr1 n1 qr2 n2 qr3 n3)
-  (-> number? string? number? string? number? string? number? panel?)
-  (titled-image-panel (~a "Project " proj)
+(define #;/contract (qr-holder proj qr1 n1 qr2 n2 qr3 n3)
+  ;(-> number? string? number? string? number? string? number? panel?)
+  (titled-image-panel (~a proj)
                       (beside
                        (above
                         (text "Beginner" 25 'black)
                         (scale .6 (local-bitmap qr1))
                         (text "Project Number:" 15 'black)
                         (text (number->string n1) 15 'black))
-                       (rectangle 30 1 'solid 'transparent)
+                       (rectangle 40 1 'solid 'transparent)
                        (above
                         (text "Advanced" 25 'black)
                         (scale .6 (local-bitmap qr2))
                         (text "Project Number:" 15 'black)
                         (text (number->string n2) 15 'black))
-                       (rectangle 30 1 'solid 'transparent)
+                       (rectangle 40 1 'solid 'transparent)
                        (above
                         (text "Completed" 25 'black)
                         (scale .6 (local-bitmap qr3))
@@ -105,38 +98,34 @@
 
                (titled-image-panel "4. Click on the tool to stop"
                                    (rectangle 900 1 'solid 'white))))
-  
+
+; ---- PROJECT 1
 (define (walking-superhero)
   (auto-layout #:page-height 1200
                (titled-image-panel #:fill 'white
                                    "Project 1"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-1-qr.png" "266345757")
+               start-of-class-instructions
 
                (titled-image-panel "1. Meet Major Triumph!\nWe need to help him walk!"
-                                   (scale .7 (local-bitmap "major-triumph-1.png")))
+                                   (scale .5 (local-bitmap "major-triumph-1.png")))
 
-               (titled-image-panel "2. Check out the code."
-                                   (scale 0.6 (local-bitmap "winter-p1-starter.png")))
+               (titled-image-panel "2. Walk to the right!"
+                                   (scale 0.55 (local-bitmap "winter-p1-move-right.png")))
 
-               (titled-image-panel "3. Walk to the right!"
-                                   (scale 0.9 (local-bitmap "winter-p1-move-1.png")))
-
-               (titled-image-panel "4. Walk to the left!"
-                                   (scale 0.9 (local-bitmap "winter-p1-move-2.png")))
+               (titled-image-panel "3. Walk to the left!"
+                                   (scale 0.55 (local-bitmap "winter-p1-move-left.png")))
       
-               (titled-image-panel "5. Create another script."
-                                   (scale 0.8 (local-bitmap "winter-p1-animate-1.png")))
+               (titled-image-panel "4. Check for any key press."
+                                   (scale 0.6 (local-bitmap "winter-p1-key-press.png")))
 
-               (titled-image-panel "6. Check for key pressed."
-                                   (scale 0.8 (local-bitmap "winter-p1-animate-2.png")))
+               (titled-image-panel "5. Change costumes."
+                                   (scale 0.6 (local-bitmap "winter-p1-animate.png")))
 
-               (titled-image-panel "7. Animate it!"
-                                   (scale 0.8 (local-bitmap "winter-p1-animate-3.png")))
-                              
                end-of-class-instructions))
 
+; ---- PROJECT 2
 (define (flying-superhero)
   (auto-layout #:page-height 1200
 
@@ -144,7 +133,7 @@
                                    "Project 2"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-2-qr.png" "266610880")
+               start-of-class-instructions
 
                (titled-image-panel "1. Look at the code\n He can walk!"
                                    (scale .5 (local-bitmap "winter-p2-starter.png")))
@@ -163,6 +152,7 @@
                               
                end-of-class-instructions))
 
+; ---- PROJECT 3
 (define (changing-costumes)
   (auto-layout #:page-height 1200
 
@@ -170,7 +160,7 @@
                                    "Project 3"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-3-qr.png" "268486163")
+               start-of-class-instructions
 
                (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
                                    (beside (local-bitmap "tommy-bark-1.png")
@@ -194,6 +184,7 @@
       
                end-of-class-instructions))
 
+; ---- PROJECT 4
 (define (fly-gallium-man)
   (auto-layout #:page-height 1200
 
@@ -201,7 +192,7 @@
                                    "Project 4"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-4-qr.png" "266609923")
+               start-of-class-instructions
 
                (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
                                    (beside (scale .8 (local-bitmap "gallium-man-1.png"))
@@ -221,6 +212,7 @@
     
                end-of-class-instructions))
 
+; ---- PROJECT 5
 (define (arachnid-boy-climbing)
   (auto-layout #:page-height 1200
 
@@ -228,11 +220,11 @@
                                    "Project 5"
                                    (rectangle 1 1 'solid 'white))
                
-               (start-of-class-instructions "starter-5-qr.png" "279876349")
+               start-of-class-instructions
 
                (titled-image-panel "1. Meet Arachnid-Boy!"
                                    (scale .4 (local-bitmap "arachnid-boy.png"))
-                                           #;(scale .5 (local-bitmap "winter-p5-starter.png")))
+                                   #;(scale .5 (local-bitmap "winter-p5-starter.png")))
 
                (titled-image-panel "2. Help him move up and down!"
                                    (scale .7 (local-bitmap "winter-p5-point-90.png")))
@@ -253,6 +245,14 @@
     
                end-of-class-instructions))
 
+(define (project-qrs p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
+  (auto-layout #:page-height 1000
+               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
+               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
+               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
+               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
+               #;(qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)))
+
 (define (all-qrs)
   (auto-layout #:page-height 1200
 
@@ -261,34 +261,38 @@
                                    (rectangle 1 1 'solid 'white))
         
                (qr-holder 1
-                          "starter-1-qr.png" 266345757
-                          "starter-1-qr.png" 266345757
-                          "starter-1-qr.png" 266345757)
+                          "qr-winter-p1-beginner.png" 280736399
+                          "qr-winter-p1-advanced.png" 280740955
+                          "qr-winter-p1-complete.png" 266345757)
 
                (qr-holder 2
-                          "starter-2-qr.png" 266610880
-                          "starter-2-qr.png" 266610880
-                          "starter-2-qr.png" 266610880)
+                          "qr-winter-p2-beginner.png" 000000000
+                          "qr-winter-p2-advanced.png" 280769058
+                          "qr-winter-p2-complete.png" 266610880)
 
                (qr-holder 3
-                          "starter-3-qr.png" 268486163
-                          "starter-3-qr.png" 268486163
-                          "starter-3-qr.png" 268486163)
+                          "qr-winter-p3-beginner.png" 000000000
+                          "qr-winter-p3-advanced.png" 000000000
+                          "qr-winter-p3-complete.png" 268486163)
 
                (qr-holder 4
-                          "starter-4-qr.png" 266609923
-                          "starter-4-qr.png" 266609923
-                          "starter-4-qr.png" 266609923)
+                          "qr-winter-p4-beginner.png" 000000000
+                          "qr-winter-p4-advanced.png" 000000000
+                          "qr-winter-p4-complete.png" 266609923)
 
                (qr-holder 5
-                          "starter-5-qr.png" 279876349
-                          "starter-5-qr.png" 279876349
-                          "starter-5-qr.png" 279876349)
+                          "qr-winter-p5-beginner.png" 000000000
+                          "qr-winter-p5-advanced.png" 000000000
+                          "qr-winter-p5-complete.png" 279876349)
                ))
 
 (define (quest1)
   (list
    (walking-superhero)
+   (project-qrs "Project 1"
+                "qr-winter-p1-beginner.png" 280736399
+                "qr-winter-p1-advanced.png" 280740955
+                "qr-winter-p1-complete.png" 266345757)
    ))
 
 (define (quest2)
@@ -317,13 +321,13 @@
         (edit-sprite-challenge)))
 
 (module+ test
-  ;(quest1)
+  (quest1)
   ;(quest2)
   ;(edit-sprite)
   ;(quest3)
   ;(quest4)
   ;(quest5)
-  (all-qrs)
+  ;(all-qrs)
 
   )
 
