@@ -45,13 +45,13 @@
                         (scale .6 (local-bitmap qr1))
                         (text "Project Number:" 15 'black)
                         (text (number->string n1) 15 'black))
-                       (rectangle 40 1 'solid 'transparent)
+                       (rectangle 150 1 'solid 'transparent)
                        (above
                         (text "Advanced" 25 'black)
                         (scale .6 (local-bitmap qr2))
                         (text "Project Number:" 15 'black)
                         (text (number->string n2) 15 'black))
-                       (rectangle 40 1 'solid 'transparent)
+                       (rectangle 150 1 'solid 'transparent)
                        (above
                         (text "Completed" 25 'black)
                         (scale .6 (local-bitmap qr3))
@@ -139,16 +139,13 @@
                                    (scale .5 (local-bitmap "winter-p2-starter.png")))
 
                (titled-image-panel "2. Add animation!"
-                                   (scale .6 (local-bitmap "winter-p2-animate.png")))
+                                   (scale .5 (local-bitmap "winter-p2-animate.png")))
 
                (titled-image-panel "3. Let's make him fly!"
-                                   (scale .7 (local-bitmap "winter-p2-fly-1.png")))
+                                   (scale .5 (local-bitmap "winter-p2-fly-1.png")))
 
-               (titled-image-panel "4. Make him glide away!"
-                                   (scale .7 (local-bitmap "winter-p2-fly-2.png")))
-
-               (titled-image-panel "5. Make him come back!"
-                                   (scale .8 (local-bitmap "winter-p2-fly-3.png")))
+               (titled-image-panel "4. Make him come back!"
+                                   (scale .5 (local-bitmap "winter-p2-fly-2.png")))
                               
                end-of-class-instructions))
 
@@ -163,24 +160,22 @@
                start-of-class-instructions
 
                (titled-image-panel "1. Meet Tommy Bark!\nWe need to help him transform into Gallium-Man!"
-                                   (beside (local-bitmap "tommy-bark-1.png")
-                                           (scale .5 (local-bitmap "winter-p3-starter.png"))))
+                                   (scale .4 (local-bitmap "winter-p3-starter.png")))
 
                (titled-image-panel "2. Add a transform key."
-                                   (scale .7 (local-bitmap "winter-p3-space-1.png")))
+                                   (scale .6 (local-bitmap "winter-p3-space-1.png")))
 
                (titled-image-panel "3. Send the position and hide!"
-                                   (scale .8 (local-bitmap "winter-p3-space-2.png")))
+                                   (scale .6 (local-bitmap "winter-p3-space-2.png")))
 
-               (titled-image-panel "4. Help Gallium-Man walk!"
-                                   (beside (scale .8 (local-bitmap "gallium-man-1.png"))
-                                           (scale .7 (local-bitmap "winter-p3-move-1.png"))))
+               (titled-image-panel "4. Switch to Gallium-Man\nHelp him move!"
+                                   (scale .5 (local-bitmap "winter-p3-move-1.png")))
 
                (titled-image-panel "5. Move Gallium-Man."
                                    (scale .6 (local-bitmap "winter-p3-move-2.png")))
 
                (titled-image-panel "6. Animate Gallium-Man!"
-                                   (scale .6 (local-bitmap "winter-p3-animate.png")))
+                                   (scale .5 (local-bitmap "winter-p3-animate.png")))
       
                end-of-class-instructions))
 
@@ -250,8 +245,7 @@
                (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
                (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
                (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
-               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
-               #;(qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)))
+               (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)))
 
 (define (all-qrs)
   (auto-layout #:page-height 1200
@@ -271,7 +265,7 @@
                           "qr-winter-p2-complete.png" 266610880)
 
                (qr-holder 3
-                          "qr-winter-p3-beginner.png" 000000000
+                          "qr-winter-p3-beginner.png" 281178993
                           "qr-winter-p3-advanced.png" 000000000
                           "qr-winter-p3-complete.png" 268486163)
 
@@ -298,16 +292,28 @@
 (define (quest2)
   (list
    (flying-superhero)
+   (project-qrs "Project 2"
+                "qr-winter-p2-beginner.png" 281169499
+                "qr-winter-p2-advanced.png" 280769058
+                "qr-winter-p2-complete.png" 266610880)
    ))
 
 (define (quest3)
   (list
    (changing-costumes)
+   (project-qrs "Project 3"
+                "qr-winter-p3-beginner.png" 281178993
+                "qr-winter-p3-advanced.png" 268487129
+                "qr-winter-p3-complete.png" 268486163)
    ))
 
 (define (quest4)
   (list
    (fly-gallium-man)
+   (project-qrs "Project 4"
+                "qr-winter-p4-beginner.png" 281212571
+                "qr-winter-p4-advanced.png" 268484911
+                "qr-winter-p4-complete.png" 266609923)
    ))
 
 (define (quest5)
@@ -321,11 +327,11 @@
         (edit-sprite-challenge)))
 
 (module+ test
-  (quest1)
+  ;(quest1)
   ;(quest2)
   ;(edit-sprite)
   ;(quest3)
-  ;(quest4)
+  (quest4)
   ;(quest5)
   ;(all-qrs)
 
