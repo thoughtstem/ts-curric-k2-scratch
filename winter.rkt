@@ -189,21 +189,17 @@
                
                start-of-class-instructions
 
-               (titled-image-panel "1. Gallium-Man wants to fly\nAdd TWO if-then blocks\ninside a forever block."
-                                   (beside (scale .8 (local-bitmap "gallium-man-1.png"))
-                                           (scale .6 (local-bitmap "winter-p4-fly-1.png"))))
+               (titled-image-panel "1. Gallium-Man wants to fly!."
+                                   (scale .5 (local-bitmap "winter-p4-fly-1.png")))
 
-               (titled-image-panel "2. Add the key pressed? blocks!"
+               (titled-image-panel "2. Add the 'key pressed?' blocks!"
                                    (scale .6 (local-bitmap "winter-p4-fly-2.png")))
 
-               (titled-image-panel "3. Help him fly up!"
-                                   (scale .6 (local-bitmap "winter-p4-fly-3.png")))
-
-               (titled-image-panel "4. Help him fly down!"
-                                   (scale .6 (local-bitmap "winter-p4-fly-4.png")))
+               (titled-image-panel "3. Help him fly!"
+                                   (scale .5 (local-bitmap "winter-p4-fly-3.png")))
 
                (titled-image-panel "5. Challenge\nThrow an Energy Ball!"
-                                   (scale .6 (local-bitmap "winter-p4-energize.png")))
+                                   (scale .5 (local-bitmap "winter-p4-energize.png")))
     
                end-of-class-instructions))
 
@@ -217,27 +213,15 @@
                
                start-of-class-instructions
 
-               (titled-image-panel "1. Meet Arachnid-Boy!"
-                                   (scale .4 (local-bitmap "arachnid-boy.png"))
-                                   #;(scale .5 (local-bitmap "winter-p5-starter.png")))
+               (titled-image-panel "1. Meet Arachnid-Boy\nHelp him move up and down!"
+                                   (scale .45 (local-bitmap "winter-p5-move.png")))
 
-               (titled-image-panel "2. Help him move up and down!"
-                                   (scale .7 (local-bitmap "winter-p5-point-90.png")))
+               (titled-image-panel "2. Create a Web clone!"
+                                   (scale .55 (local-bitmap "winter-p5-clone.png")))
 
-               (titled-image-panel "3. Change the Y position!"
-                                   (scale .7 (local-bitmap "winter-p5-change-y.png")))
-
-               (titled-image-panel "4. Create a Web clone!"
-                                   (scale .7 (local-bitmap "winter-p5-clone.png")))
-
-               (titled-image-panel "5. Shoot Web!"
-                                   (scale .7 (local-bitmap "winter-p5-wait.png")))
-
-               (titled-image-panel "6. Challenge\nMake Poison respawn!"
-                                   (beside
-                                    (scale .4 (local-bitmap "poison.png"))
-                                    (scale .8 (local-bitmap "winter-p5-poison-challenge.png"))))
-    
+               (titled-image-panel "3. Challenge\nMake Poison respawn!"
+                                   (scale .55 (local-bitmap "winter-p5-poison-challenge.png")))
+  
                end-of-class-instructions))
 
 (define (project-qrs p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
@@ -319,6 +303,10 @@
 (define (quest5)
   (list
    (arachnid-boy-climbing)
+   (project-qrs "Project 5"
+                "qr-winter-p5-beginner.png" 281468053
+                "qr-winter-p5-advanced.png" 279888211
+                "qr-winter-p5-complete.png" 279876349)
    ))
 
 ; -- CHALLENGES
@@ -331,8 +319,8 @@
   ;(quest2)
   ;(edit-sprite)
   ;(quest3)
-  (quest4)
-  ;(quest5)
+  ;(quest4)
+  (quest5)
   ;(all-qrs)
 
   )
