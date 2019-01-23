@@ -229,7 +229,7 @@
   (auto-layout #:page-height 1200
 
                (titled-image-panel #:fill 'white
-                                   "Project 5"
+                                   "Project 6"
                                    (rectangle 1 1 'solid 'white))
                
                start-of-class-instructions
