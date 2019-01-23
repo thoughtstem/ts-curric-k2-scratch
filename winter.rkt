@@ -224,6 +224,33 @@
   
                end-of-class-instructions))
 
+; ---- PROJECT 6
+(define (arachnid-boy-vs-poison)
+  (auto-layout #:page-height 1200
+
+               (titled-image-panel #:fill 'white
+                                   "Project 5"
+                                   (rectangle 1 1 'solid 'white))
+               
+               start-of-class-instructions
+
+               (titled-image-panel "1. Meet Poison\nHe wants to shoot web!"
+                                   (scale .55 (local-bitmap "winter-p6-hidden-var.png")))
+
+               (titled-image-panel "2. Add a forever loop."
+                                   (scale .6 (local-bitmap "winter-p6-loop.png")))
+
+               (titled-image-panel "3. Create a Web2 clone!"
+                                   (scale .55 (local-bitmap "winter-p6-clone.png")))
+
+               (titled-image-panel "4. Challenge\nMake Arachnid-Boy disappear!"
+                                   (scale .55 (local-bitmap "winter-p6-challenge-loop.png")))
+
+               (titled-image-panel "5. Hide him!"
+                                   (scale .53 (local-bitmap "winter-p6-challenge-hide.png")))
+  
+               end-of-class-instructions))
+
 (define (project-qrs p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
   (auto-layout #:page-height 1000
                (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
@@ -309,6 +336,16 @@
                 "qr-winter-p5-complete.png" 279876349)
    ))
 
+(define (quest6)
+  (list
+   (arachnid-boy-vs-poison)
+   (project-qrs "Project 6"
+                "qr-winter-p6-beginner.png" 281647450
+                "qr-winter-p6-advanced.png" 281500162
+                "qr-winter-p6-complete.png" 281490286)
+   ))
+
+
 ; -- CHALLENGES
 (define  (edit-sprite)
   (list (edit-sprite-challenge)
@@ -320,7 +357,8 @@
   ;(edit-sprite)
   ;(quest3)
   ;(quest4)
-  (quest5)
+  ;(quest5)
+  (quest6)
   ;(all-qrs)
 
   )
@@ -332,4 +370,5 @@
         quest3
         quest4
         quest5
+        quest6
         ))
