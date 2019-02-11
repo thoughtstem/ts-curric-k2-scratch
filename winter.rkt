@@ -293,6 +293,30 @@
 
                end-of-class-instructions))
 
+;-----Project 9
+(define (grey-tarantula-catch)
+  (auto-layout #:page-height 1200
+
+               (titled-image-panel #:fill 'white
+                                   "Project 9"
+                                   (rectangle 1 1 'solid 'white))
+               
+               start-of-class-instructions
+
+               (titled-image-panel "1. Grey Tarantula\n Make her move!"
+                                   (scale .6 (local-bitmap "winter-p9-grey-tarantula.png")))
+
+               (titled-image-panel "2. Show the Baton!"
+                                   (scale .65 (local-bitmap "winter-p9-baton-1.png")))
+
+               (titled-image-panel "3. Make the Baton fall!"
+                                   (scale .55 (local-bitmap "winter-p9-baton-2.png")))
+
+               (titled-image-panel "4. Challenge\n Change costumes!"
+                                   (scale .6 (local-bitmap "winter-p9-costume.png")))
+
+               end-of-class-instructions))
+
 (define (project-qrs p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
   (auto-layout #:page-height 1000
                (qr-holder p beg-qr beg-pr adv-qr adv-beg end-qr end-pr)
@@ -405,6 +429,15 @@
                 "qr-winter-p8-complete.png" 286058426)
    ))
 
+(define (quest9)
+  (list
+   (grey-tarantula-catch)
+   (project-qrs "Project 9"
+                "qr-winter-p9-beginner.png" 286080554
+                "qr-winter-p9-advanced.png" 286081912
+                "qr-winter-p9-complete.png" 286077786)
+   ))
+
 
 ; -- CHALLENGES
 (define  (edit-sprite)
@@ -420,7 +453,8 @@
   ;(quest5)
   ;(quest6)
   ;(quest7)
-  (quest8)
+  ;(quest8)
+  (quest9)
   ;(all-qrs)
 
   )
