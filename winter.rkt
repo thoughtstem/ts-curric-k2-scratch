@@ -438,6 +438,25 @@
                 "qr-winter-p9-complete.png" 286077786)
    ))
 
+(define (quest10)
+  (list
+   ;(grey-tarantula-collect) on Google Drive:
+   ;https://docs.google.com/document/d/1ugc_CC4ejr_1ttEi615STQGw2ZneYsw8r2h4wMASmy4/edit?usp=sharing
+   (project-qrs "Project 10"
+                "qr-winter-p10-beginner.png" 288235594
+                "qr-winter-p10-advanced.png" 288216294
+                "qr-winter-p10-complete.png" 286078344)
+   ))
+
+(define (quest11)
+  (list
+   ;(grey-tarantula-game) on Google Drive:
+   ;https://docs.google.com/document/d/1ugc_CC4ejr_1ttEi615STQGw2ZneYsw8r2h4wMASmy4/edit?usp=sharing
+   (project-qrs "Project 11"
+                "qr-winter-p11-beginner.png" 288528230 
+                "qr-winter-p11-advanced.png" 288528358
+                "qr-winter-p11-complete.png" 286063074)
+   ))
 
 ; -- CHALLENGES
 (define  (edit-sprite)
@@ -454,7 +473,9 @@
   ;(quest6)
   ;(quest7)
   ;(quest8)
-  (quest9)
+  ;(quest9)
+  ;(quest10)
+  (quest11)
   ;(all-qrs)
 
   )
@@ -469,4 +490,7 @@
         quest6
         quest7
         quest8
+        quest9
+        quest10
+        quest11
         ))

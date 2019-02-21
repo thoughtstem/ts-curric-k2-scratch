@@ -1,12 +1,5 @@
 #lang racket
 
-;TODO
-; -- create beginner starter projects 1-5
-; -- create QRs for beginner starters
-; -- create QRs for completes
-; -- replace QRs & numbers in (all-qrs)
-; -- resize images on complete pages?
-
 ;Provide all your quests from main.
 (provide quests)
 
@@ -193,7 +186,7 @@
                                    (scale .5 (local-bitmap "winter-p4-fly-1.png")))
 
                (titled-image-panel "2. Add the 'key pressed?' blocks!"
-                                   (scale .6 (local-bitmap "winter-p4-fly-2.png")))
+                                   (scale .5 (local-bitmap "winter-p4-fly-2.png")))
 
                (titled-image-panel "3. Help him fly!"
                                    (scale .5 (local-bitmap "winter-p4-fly-3.png")))
@@ -252,7 +245,7 @@
                end-of-class-instructions))
 
 ; ---- PROJECT 7
-(define (P7-NAME-HERE)
+(define (wonder-girl)
   (auto-layout #:page-height 1200
 
                (titled-image-panel #:fill 'white
@@ -262,22 +255,22 @@
                start-of-class-instructions
 
                (titled-image-panel "1. Wonder Girl"
-                                   (scale .4 (local-bitmap "winter-p7-wonder-girl.png")))
+                                   (scale .55 (local-bitmap "winter-p7-wonder-girl.png")))
 
-               (titled-image-panel "2. Goal! "
-                                   (scale .4 (local-bitmap "WW2Gift.png")))
+               (titled-image-panel "2. Cheetah! "
+                                   (scale .55 (local-bitmap "winter-p7-cheetah.png")))
 
-               (titled-image-panel "3. Obstacles"
-                                   (scale .4 (local-bitmap "Obstacles.png")))
+               (titled-image-panel "3. Goal! "
+                                   (scale .55 (local-bitmap "winter-p7-goal.png")))
 
-               (titled-image-panel "4. Make the Background Change Colors!"
-                                   (scale .4 (local-bitmap "WW2BG.png")))
+               (titled-image-panel "4. Challenge\nAdd more obstacles!"
+                                   (scale .65 (local-bitmap "winter-p7-obstacles.png")))
 
                end-of-class-instructions))
 
 
 ;-----Project 8
-(define (P8-NAME-HERE)
+(define (wonder-girl-2)
   (auto-layout #:page-height 1200
 
                (titled-image-panel #:fill 'white
@@ -287,16 +280,40 @@
                start-of-class-instructions
 
                (titled-image-panel "1. Wonder Girl"
-                                   (scale .5 (local-bitmap "winter-p7-wonder-girl.png")))
+                                   (scale .575 (local-bitmap "winter-p8-wonder-girl.png")))
 
                (titled-image-panel "2. Goal! "
-                                   (scale .5 (local-bitmap "winter-p8-goal.png")))
+                                   (scale .55 (local-bitmap "winter-p8-goal.png")))
 
                (titled-image-panel "3. Obstacles"
-                                   (scale .5 (local-bitmap "Obstacles.png")))
+                                   (scale .675 (local-bitmap "winter-p8-obstacles.png")))
 
                (titled-image-panel "4. Make the Background Change Colors!"
-                                   (scale .5 (local-bitmap "WW2BG.png")))
+                                   (scale .5 (local-bitmap "winter-p8-win.png")))
+
+               end-of-class-instructions))
+
+;-----Project 9
+(define (grey-tarantula-catch)
+  (auto-layout #:page-height 1200
+
+               (titled-image-panel #:fill 'white
+                                   "Project 9"
+                                   (rectangle 1 1 'solid 'white))
+               
+               start-of-class-instructions
+
+               (titled-image-panel "1. Grey Tarantula\n Make her move!"
+                                   (scale .6 (local-bitmap "winter-p9-grey-tarantula.png")))
+
+               (titled-image-panel "2. Show the Baton!"
+                                   (scale .65 (local-bitmap "winter-p9-baton-1.png")))
+
+               (titled-image-panel "3. Make the Baton fall!"
+                                   (scale .55 (local-bitmap "winter-p9-baton-2.png")))
+
+               (titled-image-panel "4. Challenge\n Change costumes!"
+                                   (scale .6 (local-bitmap "winter-p9-costume.png")))
 
                end-of-class-instructions))
 
@@ -396,23 +413,39 @@
 
 (define (quest7)
   (list
-   (P7-NAME-HERE)
+   (wonder-girl)
    (project-qrs "Project 7"
-                "Wonder-Girl-Beginner.png" 283106146 ;change QR image
-                "Winder-Girl-Advanced.png" 282345269 ;change QR image
-                "Wonder-Girl(Completed).png" 283311223) ;change QR image
+                "qr-winter-p7-beginner.png" 286032000
+                "qr-winter-p7-advanced.png" 286032359
+                "qr-winter-p7-complete.png" 286032821)
    ))
 
 (define (quest8)
   (list
-   (P8-NAME-HERE)
+   (wonder-girl-2)
    (project-qrs "Project 8"
-                "qr-winter-p8-beginner.png" 284655128
-                "qr-winter-p8-advanced.png" 284935116
-                "qr-winter-p8-complete.png" 284941216)
+                "qr-winter-p8-beginner.png" 286058451
+                "qr-winter-p8-advanced.png" 286058439
+                "qr-winter-p8-complete.png" 286058426)
    ))
 
+(define (quest9)
+  (list
+   (grey-tarantula-catch)
+   (project-qrs "Project 9"
+                "qr-winter-p9-beginner.png" 286080554
+                "qr-winter-p9-advanced.png" 286081912
+                "qr-winter-p9-complete.png" 286077786)
+   ))
 
+(define (quest10)
+  (list
+   ;(grey-tarantula-catch) on Google Drive ask Sonny
+   (project-qrs "Project 10"
+                "qr-winter-p10-beginner.png" 288235594
+                "qr-winter-p10-advanced.png" 288216294
+                "qr-winter-p10-complete.png" 286078344)
+   ))
 ; -- CHALLENGES
 (define  (edit-sprite)
   (list (edit-sprite-challenge)
@@ -426,8 +459,10 @@
   ;(quest4)
   ;(quest5)
   ;(quest6)
-  ;l(quest7)
-  (quest8)
+  ;(quest7)
+  ;(quest8)
+  ;(quest9)
+  (quest10)
   ;(all-qrs)
 
   )
@@ -442,4 +477,6 @@
         quest6
         quest7
         quest8
+        quest9
+        quest10
         ))
